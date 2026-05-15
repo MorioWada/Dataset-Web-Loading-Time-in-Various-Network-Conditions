@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full gallery of the many small images collection">
+    <title>Gallery | MOMENTUM Photography</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        /* ============================================
+           MANY SMALL IMAGES - Gallery: 8×8 grid (64 images on one screen)
+           ============================================ */
+
+        /* Gallery page: 8×8 grid fits on screen */
+        section[aria-labelledby="gallery-items"] {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .gallery-page__grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 4px;
+            height: calc(100vh - 200px);
+            min-height: 480px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: var(--space-sm);
+        }
+
+        .gallery-item {
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--color-bg-secondary);
+            height: 100%;
+        }
+
+        .gallery-item__img {
+            width: 100%;
+            height: 85%;
+            object-fit: cover;
+        }
+
+        .gallery-item__content {
+            height: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4px 8px;
+        }
+
+        .gallery-item__title {
+            font-size: 0.7rem;
+            margin-bottom: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .gallery-item__desc {
+            display: none;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-page__grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(11, 1fr);
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-page__grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(16, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-page__grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(22, 1fr);
+            }
+        }
+
+        /* Back button */
+        .back-nav {
+            max-width: 100%;
+            margin: 0;
+            padding: 0 var(--space-sm);
+        }
+
+        .back-nav__link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--color-accent);
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+
+        .back-nav__link:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .back-nav__link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Override padding for gallery grid section only */
+        section[aria-labelledby="gallery-items"] {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="logo">MOMEN<span>TUM</span></a>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#home" class="nav__link">Home</a>
+                <a href="index.html#gallery" class="nav__link">Gallery</a>
+                <a href="gallery.html" class="nav__link nav__link--active">All Works</a>
+                <a href="index.html#about" class="nav__link">About</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+            </nav>
+
+            <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Back Navigation -->
+        <div class="back-nav" style="padding-top: 100px;">
+            <a href="index.html" class="back-nav__link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span>Back to Home</span>
+            </a>
+        </div>
+
+        <!-- Gallery Page Header -->
+        <section class="section" style="padding: 0;" aria-labelledby="gallery-page-title">
+            <div class="section__header">
+                <h1 id="gallery-page-title" class="section__title">Complete Collection</h1>
+                <p class="section__subtitle">All 64 photographs in full detail</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="section" aria-labelledby="gallery-items">
+            <div class="gallery-page__grid">
+                 <!-- Image 1 -->
+                 <article id="img-1" class="gallery-item">
+                     <img
+                         src="/images/ms-1.png"
+                         alt="Desert dunes at sunset"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-1"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Desert Waves</h2>
+                        <p class="gallery-item__desc">The sweeping dunes of the Sahara painted in fiery orange and gold by the setting sun.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 2 -->
+                 <article id="img-2" class="gallery-item">
+                     <img
+                         src="/images/ms-2.png"
+                         alt="Abstract geometric architecture"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-2"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Urban Geometry</h2>
+                        <p class="gallery-item__desc">Modern architecture reveals hidden patterns in concrete and glass.</p>
+                    </div>
+                </article>
+
+                <!-- Image 3 -->
+                <article id="img-3" class="gallery-item">
+                     <img
+                         src="/images/ms-3.png"
+                         alt="Serene lake reflection"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-3"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Mirror Lake</h2>
+                        <p class="gallery-item__desc">Perfect stillness where mountains meet water in pristine reflection.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 4 -->
+                 <article id="img-4" class="gallery-item">
+                     <img
+                         src="/images/ms-4.png"
+                         alt="Stormy ocean waves"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-4"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Storm Chaser</h2>
+                        <p class="gallery-item__desc">The raw, untamed power of the ocean during a coastal storm.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 5 -->
+                 <article id="img-5" class="gallery-item">
+                     <img
+                         src="/images/ms-5.png"
+                         alt="Foggy forest path"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-5"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Enchanted Forest</h2>
+                        <p class="gallery-item__desc">Morning mist weaves through ancient woodlands, creating ethereal pathways.</p>
+                    </div>
+                </article>
+
+                <!-- Image 6 -->
+                <article id="img-6" class="gallery-item">
+                     <img
+                         src="/images/ms-6.png"
+                         alt="Street art and graffiti"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-6"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Urban Canvas</h2>
+                        <p class="gallery-item__desc">Color bursts from walls, telling stories of street culture and rebellion.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 7 -->
+                 <article id="img-7" class="gallery-item">
+                     <img
+                         src="/images/ms-7.png"
+                         alt="Intimate portrait"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-7"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">The Gaze</h2>
+                        <p class="gallery-item__desc">A portrait that speaks volumes without saying a word.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 8 -->
+                 <article id="img-8" class="gallery-item">
+                     <img
+                         src="/images/ms-8.png"
+                         alt="City lights at night"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-8"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">City Pulse</h2>
+                        <p class="gallery-item__desc">The metropolis awakens in a symphony of neon and steel.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 9 -->
+                 <article id="img-9" class="gallery-item">
+                     <img
+                         src="/images/ms-9.png"
+                         alt="Mountain valley river"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-9"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">River's Edge</h2>
+                        <p class="gallery-item__desc">Where wilderness flows in eternal motion toward the sea.</p>
+                    </div>
+                </article>
+
+                <!-- Image 10 -->
+                <article id="img-10" class="gallery-item">
+                     <img
+                         src="/images/ms-10.png"
+                         alt="Foggy morning hills"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-10"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Haze</h2>
+                        <p class="gallery-item__desc">Soft morning light diffuses through rolling hills and valleys.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 11 -->
+                 <article id="img-11" class="gallery-item">
+                     <img
+                         src="/images/ms-11.png"
+                         alt="Coastal rocks waves"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-11"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Coastal</h2>
+                        <p class="gallery-item__desc">Ancient rocks stand guard as waves crash in timeless rhythm.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 12 -->
+                 <article id="img-12" class="gallery-item">
+                     <img
+                         src="/images/ms-12.png"
+                         alt="Mountain peaks"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-12"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Alpine</h2>
+                        <p class="gallery-item__desc">Majestic peaks pierce the sky in a display of geological grandeur.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 13 -->
+                 <article id="img-13" class="gallery-item">
+                     <img
+                         src="/images/ms-13.png"
+                         alt="Starry night mountains"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-13"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Stardust</h2>
+                        <p class="gallery-item__desc">The Milky Way arcs over silent mountains in the deep night.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 14 -->
+                 <article id="img-14" class="gallery-item">
+                     <img
+                         src="/images/ms-14.png"
+                         alt="Green valley landscape"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-14"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Emerald Valley</h2>
+                        <p class="gallery-item__desc">Vibrant green stretches as far as the eye can see, alive with possibility.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 15 -->
+                 <article id="img-15" class="gallery-item">
+                     <img
+                         src="/images/ms-15.png"
+                         alt="Minimalist white building"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-15"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Purity</h2>
+                        <p class="gallery-item__desc">Minimalist architecture finds beauty in simplicity and light.</p>
+                    </div>
+                </article>
+
+                 <!-- Image 16 -->
+                 <article id="img-16" class="gallery-item">
+                     <img
+                         src="/images/ms-16.png"
+                         alt="Mountain peak above clouds"
+                         class="gallery-item__img"
+                         
+                         data-test-id="ms-img-16"
+                     >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Above the Clouds</h2>
+                        <p class="gallery-item__desc">Standing atop the world, where peaks rise above the weather.</p>
+                    </div>
+                </article>
+                <!-- Image 17 -->
+                <article id="img-17" class="gallery-item">
+                    <img
+                        src="/images/ms-17.png"
+                        alt="Dew Drops - Morning Series"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-17"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Dew Drops</h2>
+                        <p class="gallery-item__desc">Morning Series</p>
+                    </div>
+                </article>
+
+                <!-- Image 18 -->
+                <article id="img-18" class="gallery-item">
+                    <img
+                        src="/images/ms-18.png"
+                        alt="Neon Nights - Urban Exploration"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-18"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Neon Nights</h2>
+                        <p class="gallery-item__desc">Urban Exploration</p>
+                    </div>
+                </article>
+
+                <!-- Image 19 -->
+                <article id="img-19" class="gallery-item">
+                    <img
+                        src="/images/ms-19.png"
+                        alt="Quiet Lake - Reflections"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-19"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Quiet Lake</h2>
+                        <p class="gallery-item__desc">Reflections</p>
+                    </div>
+                </article>
+
+                <!-- Image 20 -->
+                <article id="img-20" class="gallery-item">
+                    <img
+                        src="/images/ms-20.png"
+                        alt="Autumn Colors - Fall Collection"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-20"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Autumn Colors</h2>
+                        <p class="gallery-item__desc">Fall Collection</p>
+                    </div>
+                </article>
+
+                <!-- Image 21 -->
+                <article id="img-21" class="gallery-item">
+                    <img
+                        src="/images/ms-21.png"
+                        alt="Golden Hour - Light Series"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-21"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Golden Hour</h2>
+                        <p class="gallery-item__desc">Light Series</p>
+                    </div>
+                </article>
+
+                <!-- Image 22 -->
+                <article id="img-22" class="gallery-item">
+                    <img
+                        src="/images/ms-22.png"
+                        alt="Abstract Light - Experimental"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-22"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Abstract Light</h2>
+                        <p class="gallery-item__desc">Experimental</p>
+                    </div>
+                </article>
+
+                <!-- Image 23 -->
+                <article id="img-23" class="gallery-item">
+                    <img
+                        src="/images/ms-23.png"
+                        alt="Foggy Morning - Mist Series"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-23"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Foggy Morning</h2>
+                        <p class="gallery-item__desc">Mist Series</p>
+                    </div>
+                </article>
+
+                <!-- Image 24 -->
+                <article id="img-24" class="gallery-item">
+                    <img
+                        src="/images/ms-24.png"
+                        alt="Crystal Clear - Water Series"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-24"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Crystal Clear</h2>
+                        <p class="gallery-item__desc">Water Series</p>
+                    </div>
+                </article>
+
+                <!-- Image 25 -->
+                <article id="img-25" class="gallery-item">
+                    <img
+                        src="/images/ms-25.png"
+                        alt="Dramatic Sky - Cloudscapes"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-25"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Dramatic Sky</h2>
+                        <p class="gallery-item__desc">Cloudscapes</p>
+                    </div>
+                </article>
+
+                <!-- Image 26 -->
+                <article id="img-26" class="gallery-item">
+                    <img
+                        src="/images/ms-26.png"
+                        alt="Silent Forest - Woodland"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-26"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Silent Forest</h2>
+                        <p class="gallery-item__desc">Woodland</p>
+                    </div>
+                </article>
+
+                <!-- Image 27 -->
+                <article id="img-27" class="gallery-item">
+                    <img
+                        src="/images/ms-27.png"
+                        alt="Desert Bloom - Flora"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-27"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Desert Bloom</h2>
+                        <p class="gallery-item__desc">Flora</p>
+                    </div>
+                </article>
+
+                <!-- Image 28 -->
+                <article id="img-28" class="gallery-item">
+                    <img
+                        src="/images/ms-28.png"
+                        alt="Misty Peaks - Mountain Range"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-28"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Misty Peaks</h2>
+                        <p class="gallery-item__desc">Mountain Range</p>
+                    </div>
+                </article>
+
+                <!-- Image 29 -->
+                <article id="img-29" class="gallery-item">
+                    <img
+                        src="/images/ms-29.png"
+                        alt="Rushing Water - Waterfalls"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-29"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Rushing Water</h2>
+                        <p class="gallery-item__desc">Waterfalls</p>
+                    </div>
+                </article>
+
+                <!-- Image 30 -->
+                <article id="img-30" class="gallery-item">
+                    <img
+                        src="/images/ms-30.png"
+                        alt="Twilight - Dusk Series"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-30"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Twilight</h2>
+                        <p class="gallery-item__desc">Dusk Series</p>
+                    </div>
+                </article>
+
+                <!-- Image 31 -->
+                <article id="img-31" class="gallery-item">
+                    <img
+                        src="/images/ms-31.png"
+                        alt="Urban Jungle - City Nature"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-31"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Urban Jungle</h2>
+                        <p class="gallery-item__desc">City Nature</p>
+                    </div>
+                </article>
+
+                <!-- Image 32 -->
+                <article id="img-32" class="gallery-item">
+                    <img
+                        src="/images/ms-32.png"
+                        alt="Calm Waters - Serene"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-32"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Calm Waters</h2>
+                        <p class="gallery-item__desc">Serene</p>
+                    </div>
+                </article>
+
+                <!-- Image 33 -->
+                <article id="img-33" class="gallery-item">
+                    <img
+                        src="/images/ms-33.png"
+                        alt="Bold Colors - Vibrant"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-33"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Bold Colors</h2>
+                        <p class="gallery-item__desc">Vibrant</p>
+                    </div>
+                </article>
+
+                <!-- Image 34 -->
+                <article id="img-34" class="gallery-item">
+                    <img
+                        src="/images/ms-34.png"
+                        alt="Soft Light - Gentle"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-34"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Soft Light</h2>
+                        <p class="gallery-item__desc">Gentle</p>
+                    </div>
+                </article>
+
+                <!-- Image 35 -->
+                <article id="img-35" class="gallery-item">
+                    <img
+                        src="/images/ms-35.png"
+                        alt="Wildflowers - Nature"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-35"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Wildflowers</h2>
+                        <p class="gallery-item__desc">Nature</p>
+                    </div>
+                </article>
+
+                <!-- Image 36 -->
+                <article id="img-36" class="gallery-item">
+                    <img
+                        src="/images/ms-36.png"
+                        alt="Night Sky - Stars"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-36"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Night Sky</h2>
+                        <p class="gallery-item__desc">Stars</p>
+                    </div>
+                </article>
+
+                <!-- Image 37 -->
+                <article id="img-37" class="gallery-item">
+                    <img
+                        src="/images/ms-37.png"
+                        alt="Morning Fog - Haze"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-37"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Morning Fog</h2>
+                        <p class="gallery-item__desc">Haze</p>
+                    </div>
+                </article>
+
+                <!-- Image 38 -->
+                <article id="img-38" class="gallery-item">
+                    <img
+                        src="/images/ms-38.png"
+                        alt="Rustic - Textures"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-38"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Rustic</h2>
+                        <p class="gallery-item__desc">Textures</p>
+                    </div>
+                </article>
+
+                <!-- Image 39 -->
+                <article id="img-39" class="gallery-item">
+                    <img
+                        src="/images/ms-39.png"
+                        alt="Modern - Architecture"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-39"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Modern</h2>
+                        <p class="gallery-item__desc">Architecture</p>
+                    </div>
+                </article>
+
+                <!-- Image 40 -->
+                <article id="img-40" class="gallery-item">
+                    <img
+                        src="/images/ms-40.png"
+                        alt="Historic - Old World"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-40"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Historic</h2>
+                        <p class="gallery-item__desc">Old World</p>
+                    </div>
+                </article>
+
+                <!-- Image 41 -->
+                <article id="img-41" class="gallery-item">
+                    <img
+                        src="/images/ms-41.png"
+                        alt="Minimal - Simple"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-41"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Minimal</h2>
+                        <p class="gallery-item__desc">Simple</p>
+                    </div>
+                </article>
+
+                <!-- Image 42 -->
+                <article id="img-42" class="gallery-item">
+                    <img
+                        src="/images/ms-42.png"
+                        alt="Complex - Details"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-42"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Complex</h2>
+                        <p class="gallery-item__desc">Details</p>
+                    </div>
+                </article>
+
+                <!-- Image 43 -->
+                <article id="img-43" class="gallery-item">
+                    <img
+                        src="/images/ms-43.png"
+                        alt="Motion - Dynamic"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-43"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Motion</h2>
+                        <p class="gallery-item__desc">Dynamic</p>
+                    </div>
+                </article>
+
+                <!-- Image 44 -->
+                <article id="img-44" class="gallery-item">
+                    <img
+                        src="/images/ms-44.png"
+                        alt="Still - Peaceful"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-44"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Still</h2>
+                        <p class="gallery-item__desc">Peaceful</p>
+                    </div>
+                </article>
+
+                <!-- Image 45 -->
+                <article id="img-45" class="gallery-item">
+                    <img
+                        src="/images/ms-45.png"
+                        alt="Warm - Color Temperature"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-45"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Warm</h2>
+                        <p class="gallery-item__desc">Color Temperature</p>
+                    </div>
+                </article>
+
+                <!-- Image 46 -->
+                <article id="img-46" class="gallery-item">
+                    <img
+                        src="/images/ms-46.png"
+                        alt="Cool - Blue Tones"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-46"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Cool</h2>
+                        <p class="gallery-item__desc">Blue Tones</p>
+                    </div>
+                </article>
+
+                <!-- Image 47 -->
+                <article id="img-47" class="gallery-item">
+                    <img
+                        src="/images/ms-47.png"
+                        alt=" Bright - Exposure"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-47"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title"> Bright</h2>
+                        <p class="gallery-item__desc">Exposure</p>
+                    </div>
+                </article>
+
+                <!-- Image 48 -->
+                <article id="img-48" class="gallery-item">
+                    <img
+                        src="/images/ms-48.png"
+                        alt="Dark - Shadows"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-48"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Dark</h2>
+                        <p class="gallery-item__desc">Shadows</p>
+                    </div>
+                </article>
+
+                <!-- Image 49 -->
+                <article id="img-49" class="gallery-item">
+                    <img
+                        src="/images/ms-49.png"
+                        alt="Sharp - Focus"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-49"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Sharp</h2>
+                        <p class="gallery-item__desc">Focus</p>
+                    </div>
+                </article>
+
+                <!-- Image 50 -->
+                <article id="img-50" class="gallery-item">
+                    <img
+                        src="/images/ms-50.png"
+                        alt="Blurred - Motion Blur"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-50"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Blurred</h2>
+                        <p class="gallery-item__desc">Motion Blur</p>
+                    </div>
+                </article>
+
+                <!-- Image 51 -->
+                <article id="img-51" class="gallery-item">
+                    <img
+                        src="/images/ms-51.png"
+                        alt="Wide - Panoramic"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-51"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Wide</h2>
+                        <p class="gallery-item__desc">Panoramic</p>
+                    </div>
+                </article>
+
+                <!-- Image 52 -->
+                <article id="img-52" class="gallery-item">
+                    <img
+                        src="/images/ms-52.png"
+                        alt="Close-up - Macro"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-52"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Close-up</h2>
+                        <p class="gallery-item__desc">Macro</p>
+                    </div>
+                </article>
+
+                <!-- Image 53 -->
+                <article id="img-53" class="gallery-item">
+                    <img
+                        src="/images/ms-53.png"
+                        alt="Distant - Landscape"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-53"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Distant</h2>
+                        <p class="gallery-item__desc">Landscape</p>
+                    </div>
+                </article>
+
+                <!-- Image 54 -->
+                <article id="img-54" class="gallery-item">
+                    <img
+                        src="/images/ms-54.png"
+                        alt="High - Elevation"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-54"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">High</h2>
+                        <p class="gallery-item__desc">Elevation</p>
+                    </div>
+                </article>
+
+                <!-- Image 55 -->
+                <article id="img-55" class="gallery-item">
+                    <img
+                        src="/images/ms-55.png"
+                        alt="Low - Ground Level"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-55"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Low</h2>
+                        <p class="gallery-item__desc">Ground Level</p>
+                    </div>
+                </article>
+
+                <!-- Image 56 -->
+                <article id="img-56" class="gallery-item">
+                    <img
+                        src="/images/ms-56.png"
+                        alt="Inside - Interior"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-56"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Inside</h2>
+                        <p class="gallery-item__desc">Interior</p>
+                    </div>
+                </article>
+
+                <!-- Image 57 -->
+                <article id="img-57" class="gallery-item">
+                    <img
+                        src="/images/ms-57.png"
+                        alt="Outside - Exterior"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-57"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Outside</h2>
+                        <p class="gallery-item__desc">Exterior</p>
+                    </div>
+                </article>
+
+                <!-- Image 58 -->
+                <article id="img-58" class="gallery-item">
+                    <img
+                        src="/images/ms-58.png"
+                        alt="Natural - Organic"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-58"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Natural</h2>
+                        <p class="gallery-item__desc">Organic</p>
+                    </div>
+                </article>
+
+                <!-- Image 59 -->
+                <article id="img-59" class="gallery-item">
+                    <img
+                        src="/images/ms-59.png"
+                        alt="Man-made - Structures"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-59"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Man-made</h2>
+                        <p class="gallery-item__desc">Structures</p>
+                    </div>
+                </article>
+
+                <!-- Image 60 -->
+                <article id="img-60" class="gallery-item">
+                    <img
+                        src="/images/ms-60.png"
+                        alt="Fresh - New"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-60"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Fresh</h2>
+                        <p class="gallery-item__desc">New</p>
+                    </div>
+                </article>
+
+                <!-- Image 61 -->
+                <article id="img-61" class="gallery-item">
+                    <img
+                        src="/images/ms-61.png"
+                        alt="Weathered - Time"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-61"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Weathered</h2>
+                        <p class="gallery-item__desc">Time</p>
+                    </div>
+                </article>
+
+                <!-- Image 62 -->
+                <article id="img-62" class="gallery-item">
+                    <img
+                        src="/images/ms-62.png"
+                        alt="Clean - Pure"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-62"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Clean</h2>
+                        <p class="gallery-item__desc">Pure</p>
+                    </div>
+                </article>
+
+                <!-- Image 63 -->
+                <article id="img-63" class="gallery-item">
+                    <img
+                        src="/images/ms-63.png"
+                        alt="Textured - Surface"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-63"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Textured</h2>
+                        <p class="gallery-item__desc">Surface</p>
+                    </div>
+                </article>
+
+                <!-- Image 64 -->
+                <article id="img-64" class="gallery-item">
+                    <img
+                        src="/images/ms-64.png"
+                        alt="Patterned - Repetition"
+                        class="gallery-item__img"
+                        
+                        data-test-id="ms-img-64"
+                    >
+                    <div class="gallery-item__content">
+                        <h2 class="gallery-item__title">Patterned</h2>
+                        <p class="gallery-item__desc">Repetition</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">&copy; 2025 MOMENTUM Photography. All rights reserved.</p>
+
+            <div class="footer__social">
+                <a href="#" class="social__link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social__link" aria-label="Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
+ 

@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Many Small Images - Test Site B: 16 small images (avg 120KB each)">
+    <meta name="performance-test" content="many-small-images">
+    <title>MOMENTUM | Photography (Test: Many Small)</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        /* 8×8 grid: all 64 images fit on one screen */
+#gallery.section {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        .gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 4px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .image-card {
+            aspect-ratio: 1 / 1;
+            height: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .image-card__img-wrapper {
+            height: 100%;
+        }
+
+        .image-card__img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-card__overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+        }
+
+        .image-card__content {
+            padding: 4px 6px;
+            transform: translateY(4px);
+        }
+
+        .image-card__title {
+            font-size: 0.65rem;
+            margin-bottom: 1px;
+        }
+
+        .image-card__desc {
+            font-size: 0.55rem;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery__grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(11, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #gallery.section {
+                height: auto;
+                min-height: auto;
+            }
+            .gallery__grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(16, 1fr);
+            }
+            .image-card__desc {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery__grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(22, 1fr);
+            }
+            .image-card__title {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="logo">MOMEN<span>TUM</span></a>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#home" class="nav__link">Home</a>
+                <a href="#gallery" class="nav__link">Gallery</a>
+                <a href="gallery.html" class="nav__link">All Works</a>
+                <a href="#about" class="nav__link">About</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </nav>
+
+            <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero__bg"></div>
+        <div class="hero__content">
+            <h1 id="hero-title" class="hero__title">Every Frame Tells a Story</h1>
+            <p class="hero__subtitle">A vast collection of moments frozen in time—each small image holds a world of detail and emotion.</p>
+            <a href="#gallery" class="hero__cta">
+                <span>Browse Collection</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+        <div class="section__header">
+            <h2 id="gallery-title" class="section__title">Collection Grid</h2>
+            <p class="section__subtitle">64 unique photographs from around the world</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery__grid">
+                <!-- Image 1 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-1" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-1.png"
+                                 alt="Desert dunes at sunset"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-1"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Desert Waves</h3>
+                            <p class="image-card__desc">Sahara Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 2 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-2" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-2.png"
+                                 alt="Abstract geometric architecture"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-2"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Urban Geometry</h3>
+                            <p class="image-card__desc">Architecture</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 3 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-3" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-3.png"
+                                 alt="Serene lake reflection"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-3"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Mirror Lake</h3>
+                            <p class="image-card__desc">Nature Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 4 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-4" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-4.png"
+                                 alt="Stormy ocean waves"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-4"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Storm Chaser</h3>
+                            <p class="image-card__desc">Ocean Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 5 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-5" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-5.png"
+                                 alt="Foggy forest path"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-5"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Enchanted Forest</h3>
+                            <p class="image-card__desc">Woodland Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 6 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-6" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-6.png"
+                                 alt="Street art and graffiti"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-6"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Urban Canvas</h3>
+                            <p class="image-card__desc">Street Art</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 7 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-7" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-7.png"
+                                 alt="Intimate portrait"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-7"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">The Gaze</h3>
+                            <p class="image-card__desc">Portrait Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 8 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-8" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-8.png"
+                                 alt="City lights at night"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-8"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">City Pulse</h3>
+                            <p class="image-card__desc">Night Photography</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 9 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-9" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-9.png"
+                                 alt="Mountain valley river"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-9"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">River's Edge</h3>
+                            <p class="image-card__desc">Wilderness Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 10 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-10" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-10.png"
+                                 alt="Foggy morning hills"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-10"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Haze</h3>
+                            <p class="image-card__desc">Morning Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 11 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-11" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-11.png"
+                                 alt="Coastal rocks waves"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-11"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Coastal</h3>
+                            <p class="image-card__desc">Seascape</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 12 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-12" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-12.png"
+                                 alt="Mountain peaks"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-12"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Alpine</h3>
+                            <p class="image-card__desc">Mountain Range</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 13 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-13" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-13.png"
+                                 alt="Starry night mountains"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-13"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Stardust</h3>
+                            <p class="image-card__desc">Astrophotography</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 14 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-14" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-14.png"
+                                 alt="Green valley landscape"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-14"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Emerald Valley</h3>
+                            <p class="image-card__desc">Countryside</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 15 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-15" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-15.png"
+                                 alt="Minimalist white building"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-15"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Purity</h3>
+                            <p class="image-card__desc">Minimalism</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 16 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-16" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                             <img
+                                 src="/images/ms-16.png"
+                                 alt="Mountain peak above clouds"
+                                 class="image-card__img"
+                                 
+                                 data-test-id="ms-img-16"
+                             >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Above the Clouds</h3>
+                            <p class="image-card__desc">Summit Series</p>
+                        </div>
+                    </a>
+                </article>
+                <!-- Image 17 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-17" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-17.png"
+                                alt="Dew Drops"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-17"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Dew Drops</h3>
+                            <p class="image-card__desc">Morning Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 18 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-18" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-18.png"
+                                alt="Neon Nights"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-18"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Neon Nights</h3>
+                            <p class="image-card__desc">Urban Exploration</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 19 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-19" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-19.png"
+                                alt="Quiet Lake"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-19"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Quiet Lake</h3>
+                            <p class="image-card__desc">Reflections</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 20 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-20" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-20.png"
+                                alt="Autumn Colors"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-20"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Autumn Colors</h3>
+                            <p class="image-card__desc">Fall Collection</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 21 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-21" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-21.png"
+                                alt="Golden Hour"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-21"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Golden Hour</h3>
+                            <p class="image-card__desc">Light Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 22 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-22" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-22.png"
+                                alt="Abstract Light"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-22"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Abstract Light</h3>
+                            <p class="image-card__desc">Experimental</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 23 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-23" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-23.png"
+                                alt="Foggy Morning"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-23"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Foggy Morning</h3>
+                            <p class="image-card__desc">Mist Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 24 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-24" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-24.png"
+                                alt="Crystal Clear"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-24"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Crystal Clear</h3>
+                            <p class="image-card__desc">Water Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 25 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-25" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-25.png"
+                                alt="Dramatic Sky"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-25"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Dramatic Sky</h3>
+                            <p class="image-card__desc">Cloudscapes</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 26 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-26" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-26.png"
+                                alt="Silent Forest"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-26"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Silent Forest</h3>
+                            <p class="image-card__desc">Woodland</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 27 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-27" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-27.png"
+                                alt="Desert Bloom"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-27"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Desert Bloom</h3>
+                            <p class="image-card__desc">Flora</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 28 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-28" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-28.png"
+                                alt="Misty Peaks"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-28"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Misty Peaks</h3>
+                            <p class="image-card__desc">Mountain Range</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 29 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-29" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-29.png"
+                                alt="Rushing Water"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-29"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Rushing Water</h3>
+                            <p class="image-card__desc">Waterfalls</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 30 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-30" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-30.png"
+                                alt="Twilight"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-30"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Twilight</h3>
+                            <p class="image-card__desc">Dusk Series</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 31 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-31" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-31.png"
+                                alt="Urban Jungle"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-31"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Urban Jungle</h3>
+                            <p class="image-card__desc">City Nature</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 32 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-32" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-32.png"
+                                alt="Calm Waters"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-32"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Calm Waters</h3>
+                            <p class="image-card__desc">Serene</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 33 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-33" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-33.png"
+                                alt="Bold Colors"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-33"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Bold Colors</h3>
+                            <p class="image-card__desc">Vibrant</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 34 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-34" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-34.png"
+                                alt="Soft Light"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-34"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Soft Light</h3>
+                            <p class="image-card__desc">Gentle</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 35 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-35" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-35.png"
+                                alt="Wildflowers"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-35"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Wildflowers</h3>
+                            <p class="image-card__desc">Nature</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 36 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-36" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-36.png"
+                                alt="Night Sky"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-36"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Night Sky</h3>
+                            <p class="image-card__desc">Stars</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 37 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-37" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-37.png"
+                                alt="Morning Fog"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-37"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Morning Fog</h3>
+                            <p class="image-card__desc">Haze</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 38 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-38" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-38.png"
+                                alt="Rustic"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-38"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Rustic</h3>
+                            <p class="image-card__desc">Textures</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 39 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-39" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-39.png"
+                                alt="Modern"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-39"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Modern</h3>
+                            <p class="image-card__desc">Architecture</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 40 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-40" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-40.png"
+                                alt="Historic"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-40"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Historic</h3>
+                            <p class="image-card__desc">Old World</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 41 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-41" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-41.png"
+                                alt="Minimal"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-41"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Minimal</h3>
+                            <p class="image-card__desc">Simple</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 42 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-42" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-42.png"
+                                alt="Complex"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-42"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Complex</h3>
+                            <p class="image-card__desc">Details</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 43 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-43" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-43.png"
+                                alt="Motion"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-43"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Motion</h3>
+                            <p class="image-card__desc">Dynamic</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 44 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-44" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-44.png"
+                                alt="Still"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-44"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Still</h3>
+                            <p class="image-card__desc">Peaceful</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 45 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-45" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-45.png"
+                                alt="Warm"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-45"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Warm</h3>
+                            <p class="image-card__desc">Color Temperature</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 46 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-46" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-46.png"
+                                alt="Cool"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-46"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Cool</h3>
+                            <p class="image-card__desc">Blue Tones</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 47 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-47" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-47.png"
+                                alt=" Bright"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-47"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title"> Bright</h3>
+                            <p class="image-card__desc">Exposure</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 48 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-48" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-48.png"
+                                alt="Dark"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-48"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Dark</h3>
+                            <p class="image-card__desc">Shadows</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 49 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-49" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-49.png"
+                                alt="Sharp"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-49"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Sharp</h3>
+                            <p class="image-card__desc">Focus</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 50 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-50" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-50.png"
+                                alt="Blurred"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-50"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Blurred</h3>
+                            <p class="image-card__desc">Motion Blur</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 51 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-51" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-51.png"
+                                alt="Wide"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-51"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Wide</h3>
+                            <p class="image-card__desc">Panoramic</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 52 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-52" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-52.png"
+                                alt="Close-up"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-52"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Close-up</h3>
+                            <p class="image-card__desc">Macro</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 53 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-53" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-53.png"
+                                alt="Distant"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-53"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Distant</h3>
+                            <p class="image-card__desc">Landscape</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 54 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-54" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-54.png"
+                                alt="High"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-54"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">High</h3>
+                            <p class="image-card__desc">Elevation</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 55 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-55" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-55.png"
+                                alt="Low"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-55"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Low</h3>
+                            <p class="image-card__desc">Ground Level</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 56 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-56" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-56.png"
+                                alt="Inside"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-56"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Inside</h3>
+                            <p class="image-card__desc">Interior</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 57 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-57" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-57.png"
+                                alt="Outside"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-57"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Outside</h3>
+                            <p class="image-card__desc">Exterior</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 58 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-58" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-58.png"
+                                alt="Natural"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-58"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Natural</h3>
+                            <p class="image-card__desc">Organic</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 59 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-59" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-59.png"
+                                alt="Man-made"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-59"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Man-made</h3>
+                            <p class="image-card__desc">Structures</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 60 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-60" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-60.png"
+                                alt="Fresh"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-60"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Fresh</h3>
+                            <p class="image-card__desc">New</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 61 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-61" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-61.png"
+                                alt="Weathered"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-61"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Weathered</h3>
+                            <p class="image-card__desc">Time</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 62 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-62" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-62.png"
+                                alt="Clean"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-62"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Clean</h3>
+                            <p class="image-card__desc">Pure</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 63 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-63" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-63.png"
+                                alt="Textured"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-63"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Textured</h3>
+                            <p class="image-card__desc">Surface</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Image 64 -->
+                <article class="image-card">
+                    <a href="gallery.html#img-64" class="image-card__link">
+                        <div class="image-card__img-wrapper">
+                            <img
+                                src="/images/ms-64.png"
+                                alt="Patterned"
+                                class="image-card__img"
+                                
+                                data-test-id="ms-img-64"
+                            >
+                            <div class="image-card__overlay"></div>
+                        </div>
+                        <div class="image-card__content">
+                            <h3 class="image-card__title">Patterned</h3>
+                            <p class="image-card__desc">Repetition</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+        <div class="about__content">
+            <h2 id="about-title" class="section__title">About the Artist</h2>
+            <p class="about__text">
+                Photography is about noticing the extraordinary in the ordinary. With MOMENTUM,
+                I explore the beauty of small moments—the details we often miss. Each of the
+                64 images in this collection carries a universe of meaning. This expanded
+                gallery celebrates the diversity of our world through a multitude of perspectives.
+            </p>
+            <a href="gallery.html" class="about__btn">
+                <span>View Full Collection</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="section__header">
+            <h2 id="contact-title" class="section__title">Get in Touch</h2>
+            <p class="section__subtitle">Interested in prints or collaborations?</p>
+        </div>
+
+        <div class="about__content">
+            <p class="about__text">
+                For inquiries about prints, licensing, or commissioned work,
+                please reach out via email or social media.
+            </p>
+            <a href="mailto:hello@momentum.com" class="about__btn">
+                <span>Send Message</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M4 4h16v16H4zM22 4l-10 10-10-10"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">&copy; 2025 MOMENTUM Photography. All rights reserved.</p>
+
+            <div class="footer__social">
+                <a href="#" class="social__link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social__link" aria-label="Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
