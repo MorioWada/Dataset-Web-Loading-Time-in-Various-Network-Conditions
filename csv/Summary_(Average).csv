@@ -1,0 +1,25 @@
+,Without Extention,,,,,,,,,,With Extention,,,,,,,,,,Improvement,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Webiste with many small images,,,,,,,,,,Webiste with many small images,,,,,,,,,,Numeric,,,Percentage,,
+,Network Condition,,,Metrics (Average),,,,,,,Network Condition,,,Metrics (Average),,,,,,,,,,,,
+,Latency,Throughput,Loss,number of request,total transfered (MB),resources (MB),finished time (ms),DOM content loaded (ms),load (ms),,Latency,Throughput,Loss,number of request,total transfered (MB),resources (MB),finished time (ms),DOM content loaded (ms),load (ms),,finished time (ms),DOM content loaded (ms),load (ms),finished time,DOM content loaded,load
+,Low,Low,Low,69,23.1,23.1,38968.92,327.64,38940.21,,Low,Low,Low,69,0.0209,0.0617,180.07,160.22,161.8,,38788.85,167.42,38778.41,99.5379138,51.09876694,99.5844912
+,Low,Low,High,69,23.1,23.1,40442.53,312.42,40417.96,,Low,Low,High,69,0.0209,0.0617,249.61,227.88,229.49,,40192.92,84.54,40188.47,99.3828032,27.05972729,99.43220786
+,Low,High,Low,69,23.1,23.1,9044.86,173.1,9024.3,,Low,High,Low,69,0.0209,0.0617,120.6,107.56,108.11,,8924.26,65.54,8916.19,98.66664603,37.86250722,98.80201234
+,Low,High,High,69,23.1,23.1,8877.92,201.61,8847.4,,Low,High,High,69,0.0209,0.0617,162.83,149.49,150.06,,8715.09,52.12,8697.34,98.16589922,25.85189227,98.30390849
+,High,Low,Low,69,23.1,23.1,110079.45,1868.53,109768.2,,High,Low,Low,69,0.0209,0.0617,972.12,964.86,965.33,,109107.33,903.67,108802.87,99.11689239,48.3626166,99.12057408
+,High,Low,High,69,23.1,23.1,121960.58,1449.13,121619.66,,High,Low,High,69,0.0209,0.0617,1207.35,1196.71,1199.85,,120753.23,252.42,120419.81,99.01004898,17.4187271,99.01344075
+,High,High,Low,69,23.1,23.1,95606.58,1239.81,95303.1,,High,High,Low,69,0.0209,0.0617,701.9,691.79,692.45,,94904.68,548.02,94610.65,99.26584551,44.20193417,99.27342342
+,High,High,High,69,23.1,23.1,105765.8,1262.54,105446.71,,High,High,High,69,0.0209,0.0617,781.88,774.06,774.6,,104983.92,488.48,104672.11,99.26074402,38.69025932,99.26541094
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Website with few large images,,,,,,,,,,Website with few large images,,,,,,,,,,Numeric,,,Percentage,,
+,Network Condition,,,Metrics (Average),,,,,,,Network Condition,,,Metrics (Average),,,,,,,,,,,,
+,Latency,Throughput,Loss,number of request,total transfered (MB),resources (MB),finished time (ms),DOM content loaded (ms),load (ms),,Latency,Throughput,Loss,number of request,total transfered (MB),resources (MB),finished time (ms),DOM content loaded (ms),load (ms),,finished time (ms),DOM content loaded (ms),load (ms),finished time,DOM content loaded,load
+,Low,Low,Low,9,23.1,23.1,39175.12,262.81,39151.92,,Low,Low,Low,9,0.0175,0.0236,141.61,125.08,125.88,,39033.51,137.73,39026.04,99.63852057,52.40668163,99.6784832
+,Low,Low,High,9,23.1,23.1,41516.87,283.52,41474.63,,Low,Low,High,9,0.0175,0.0236,192.57,176.27,176.92,,41324.3,107.25,41297.71,99.53616446,37.82801919,99.57342597
+,Low,High,Low,9,23.1,23.1,9285.95,153.44,9264.32,,Low,High,Low,9,0.0175,0.0236,94.62,84.66,85.05,,9191.33,68.78,9179.27,98.98104125,44.82533889,99.08196176
+,Low,High,High,9,23.1,23.1,9220.66,177.42,9192.14,,Low,High,High,9,0.0175,0.0236,141.93,131.44,132.01,,9078.73,45.98,9060.13,98.46073925,25.91590576,98.56388175
+,High,Low,Low,9,23.1,23.1,128149.01,1471.08,127832.7,,High,Low,Low,9,0.0175,0.0236,1080.16,1073.38,1073.62,,127068.85,397.7,126759.08,99.15710625,27.03455964,99.16013665
+,High,Low,High,9,23.1,23.1,157847.64,1747.09,157486.11,,High,Low,High,9,0.0175,0.0236,1245.48,1238.64,1238.83,,156602.16,508.45,156247.28,99.21096065,29.10267931,99.2133719
+,High,High,Low,9,23.1,23.1,123172.73,1274.94,122868.8,,High,High,Low,9,0.0175,0.0236,661.55,653.27,653.74,,122511.18,621.67,122215.06,99.46290871,48.76072599,99.46793653
+,High,High,High,9,23.1,23.1,139648.36,1235.99,139202.42,,High,High,High,9,0.0175,0.0236,753.98,747.3,747.69,,138894.38,488.69,138454.73,99.46008675,39.53834578,99.46287572
