@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Image Blocker",
+  "version": "1.0",
+  "description": "Blocks all image requests and replaces them with buttons.",
+  "permissions": ["declarativeNetRequest", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
