@@ -4,10 +4,10 @@
 This dataset is released under the Creative Commons CC0 1.0 Universal license.
 You are free to copy, modify, distribute, and use the data, even for commercial purposes, without asking permission.
 
-Overview
+## Overview
 This repository provides a dataset for analyzing client-side web page loading times under heterogeneous network conditions. The dataset compares performance results with and without image assets, highlighting the impact of media-heavy content on page responsiveness.
 
-Purpose
+## Purpose
 The dataset is intended to support:
 - Web performance research
 - Network simulation studies
@@ -16,7 +16,7 @@ The dataset is intended to support:
 
 It can be used by researchers, developers, and students to benchmark, reproduce experiments, and explore optimization strategies for web delivery.
 
-Contents
+## Contents
 - Network Conditions:
   - High throughput, low latency, low loss
   - High throughput, low latency, high loss
@@ -44,7 +44,7 @@ High loss = 5%, low loss = 0%
   - Many but small images
   - Few but large images
 
-Data collection procedure
+## Data collection procedure
 1. Create a webpage (controlled).
 2. Choose a network profile (one of eight).
 3. Load the page in Baseline Mode (extension inactive).
