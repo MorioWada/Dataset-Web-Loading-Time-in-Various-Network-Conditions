@@ -1,4 +1,4 @@
-# Dataset-Web-Loading-Time-in-Various-Network-Conditions
+# Dataset Web Loading Time in Various Network Conditions
 
 ## License
 This dataset is released under the Creative Commons CC0 1.0 Universal license.
